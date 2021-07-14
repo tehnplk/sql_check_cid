@@ -23,6 +23,6 @@ from (
 		% 11) caldigit ,
 
 	 cast(substring(cid,13,1) as integer)  checkdigit
-	 from  log_queue
+	 from  your_table_name
 	 where cid is not null and LENGTH(cid)=13
  ) t
