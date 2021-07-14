@@ -4,7 +4,6 @@ t.cid
 ,t.checkdigit
 ,case when case when t.caldigit > 9 then t.caldigit - 10 else t.caldigit end = t.checkdigit then 'OK' else 'ERR' End result
 from (
-
 	 select cid
 	 ,11-(
 	 (cast(substring(cid,1,1) as integer) * 13 +
@@ -21,6 +20,5 @@ from (
 	 cast(substring(cid,12,1) as integer) * 2 ) % 11) caldigit
 	 ,cast(substring(cid,13,1) as integer)  checkdigit	 
 	 from  your_table_name	 
-	 where cid is not null and LENGTH(cid)=13
-	 
+	 where cid is not null and LENGTH(cid)=13 
  ) t
